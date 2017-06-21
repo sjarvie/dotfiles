@@ -57,7 +57,6 @@ plugins=(git)
 
 # User configuration
 
-export PATH="/Users/sjarvie/.rvm/gems/ruby-2.1.2/bin:/Users/sjarvie/.rvm/gems/ruby-2.1.2@global/bin:/Users/sjarvie/.rvm/rubies/ruby-2.1.2/bin:/Users/sjarvie/zb1/cli/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/go/bin:/usr/texbin:/usr/local/go/bin:/Users/sjarvie/zb1/infrastructure/bin:/Users/sjarvie/zb1/common/bin:/Users/sjarvie/develop/storm/storm-0.8.2/bin:/usr/local/bin:/Users/sjarvie/.bin/:/usr/local/go/bin/bin:/usr/local/ec2/ec2-api-tools-1.7.1.1//bin:/usr/bin/xcodebuild:/Users/sjarvie/.rvm/bin"
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -103,6 +102,7 @@ export GOPATH=/usr/local/go/packages
 export PATH=$PATH:$GOPATH/bin:/usr/local/bin:$HOME/.bin/
 export PATH=$PATH:$EC2_HOME/bin
 export PATH=$PATH:/usr/bin/xcodebuild
+export PATH=$PATH:~/bin
 
 ########################################################################
 # ALIASES ##############################################################
@@ -128,19 +128,6 @@ alias gpm="git pull origin master"
 
 
 ########################################################################
-# HADOOP ###############################################################
-########################################################################
-export HADOOP_HOME=/Users/sjarvie/hadoop/hadoop-2.6.0-cdh5.4.8
-
-
-########################################################################
-# HIVE ###############################################################
-########################################################################
-export HIVE_OPTS='-hiveconf mapred.job.tracker=local -hiveconf fs.default.name=file:///tmp -hiveconf hive.metastore.warehouse.dir=file:///tmp/warehouse -hiveconf javax.jdo.option.ConnectionURL=jdbc:derby:;databaseName=/tmp/metastore_db;create=true'
-
-
-
-########################################################################
 # DOCKER ###############################################################
 ########################################################################
 alias d='docker'
@@ -151,15 +138,6 @@ export DOCKER_HOST=tcp://192.168.59.103:2376
 
 alias lockme='/System/Library/CoreServices/Menu\ Extras/User.menu/Contents/Resources/CGSession -suspend'
 export HISTTIMEFORMAT="%d/%m/%y %T "
-
-
-
-export PATH=$PATH:~/bin
-
-
-if [[ "$PATH" != *"/Users/sjarvie/dcos/bin"* ]];
-    then export PATH=$PATH:/Users/sjarvie/dcos/bin;
-fi
 
 
 
