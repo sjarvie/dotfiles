@@ -109,8 +109,7 @@ export PATH=$PATH:/usr/bin/xcodebuild
 ########################################################################
 alias ll="ls -lh"
 alias la="ls -lah"
-alias cz="cd ~/repos"
-
+alias cz='cd /src'
 alias cs="cd ~/personal"
 alias vim="mvim -v"
 alias ff="find . | grep -v \.git | grep"
@@ -185,5 +184,4 @@ export EDITOR=vim
 
 # Configure anything that's machine specifiC
 source ~/.zsh_customizations
-
 
