@@ -1,41 +1,17 @@
-execute pathogen#infect()
-
-" Let Vundle manage Vundle
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Bundles
-Bundle 'tpope/vim-surrond.vim'
-Bundle 'tpope/vim-fugitive.vim'
-Bundle 'tmhedberg/SimpylFold'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/nerdtree'
-Bundle 'kien/ctrlp.vim'
-Bundle 'andviro/flake8-vim'
-Bundle 'benmills/vimux'
-Bundle 'gmarik/vundle'
-
-call vundle#end()
-filetype plugin indent on
-
 "----------------------------------------------------------------------
 " Basic Options
 "----------------------------------------------------------------------
-" Shortcut to yanking to the system clipboard
-set clipboard=unnamed
-map <leader>y "*y
-map <leader>p "*p
-
 scriptencoding utf-8
 set encoding=utf-8
 let mapleader=";"         " The <leader> key
 set autoread              " Reload files that have not been modified
 set backspace=2           " Makes backspace not behave all retarded-like
-set colorcolumn=110        " Highlight 110 character limit
+set colorcolumn=80        " Highlight 80 character limit
 set cursorline            " Highlight the line the cursor is on
 set hidden                " Allow buffers to be backgrounded without being saved
 set laststatus=2          " Always show the status bar
+set list                  " Show invisible characters
+set listchars=tab:›\ ,eol:¬,trail:⋅ "Set the characters for the invisibles
 set relativenumber        " Show relative line numbers
 set ruler                 " Show the line number and column in the status bar
 set t_Co=256              " Use 256 colors
@@ -46,80 +22,13 @@ set splitbelow            " Splits show up below by default
 set splitright            " Splits go to the right by default
 set title                 " Set the title for gvim
 set visualbell            " Use a visual bell to notify us
-set splitbelow
-set splitright
-
-
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
-
-" Enable folding with the spacebar
-nnoremap <space> za
-
-" Make handling Vim windows easier
-map <leader>w- <C-W>- " smaller
-map <leader>w+ <C-W>+ " larger
-map <leader>w[ <C-W>= " equal
-map <leader>w] <C-W>_ " fill screen
-
-
-" Make splitting Vim windows easier
-map <leader>; <C-W>s
-map <leader>` <C-W>v
-
-" vv to generate new vertical split
-nnoremap <silent> vv <C-w>v
-
-" Make switching Vim windows easier
-" E.g. instead of ctrl-w then j, it’s just ctrl-j
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
-
-" Open new split panes to right and bottom, which feels more natural than Vim’s default
-set splitbelow
-set splitright
-
-" Max out the height of the current split
-" ctrl + w _
-
-" Max out the width of the current split
-" ctrl + w |
-
-"Normalize all split sizes, which is very handy when resizing terminal
-" ctrl + w =
-
-"Swap top/bottom or left/right split
-" Ctrl+W R
-
-"Break out current window into a new tabview
-" Ctrl+W T
-
-"Close every window in the current tabview but the current one
-" Ctrl+W o
-
-
-
-" Prompt for a command to run
-map <Leader>vp :VimuxPromptCommand<CR>
-
-" Run last command executed by VimuxRunCommand
-map <Leader>vl :VimuxRunLastCommand<CR>
 
 if !has("win32")
     set showbreak=↪           " The character to put to show a line has been wrapped
 end
 
-" Color scheme
 syntax on                 " Enable filetype detection by syntax
-colorscheme hybrid
-set background=light
-let g:pencil_higher_contrast_ui = 1   " 0=low (def), 1=high
-let g:pencil_neutral_headings = 1   " 0=blue (def), 1=normal
-let g:molokai_original = 1
+colorscheme molokai
 
 " Backup settings
 "execute "set directory=" . g:vim_home_path . "/swap"
@@ -128,6 +37,7 @@ let g:molokai_original = 1
 "set backup
 "set undofile
 "set writebackup
+
 
 " Search settings
 set hlsearch   " Highlight results
@@ -151,9 +61,14 @@ set wildignore+=*.swp         " Ignore vim backups
 
 " GUI settings
 if has("gui_running")
-    colorscheme hybrid
+    colorscheme molokai
     set guioptions=cegmt
-    set guifont=Inconsolata\ for\ Powerline:h14
+
+    if has("win32")
+        set guifont=Inconsolata:h11
+    else
+        set guifont=Inconsolata\ for\ Powerline:h14
+    endif
 
     if exists("&fuopt")
         set fuopt+=maxhorz
@@ -163,6 +78,14 @@ endif
 "----------------------------------------------------------------------
 " Key Mappings
 "----------------------------------------------------------------------
+" Remap a key sequence in insert mode to kick me out to normal
+" mode. This makes it so this key sequence can never be typed
+" again in insert mode, so it has to be unique.
+"
+" Make j/k visual down and up instead of whole lines. This makes word
+" wrapping a lot more pleasent.
+map j gj
+map k gk
 
 " cd to the directory containing the file in the buffer. Both the local
 " and global flavors.
@@ -177,6 +100,11 @@ map <C-j> <C-w>j
 map <C-k> <C-w>k
 map <C-h> <C-w>h
 map <C-l> <C-w>l
+
+" Shortcut to yanking to the system clipboard
+map <leader>y "*y
+map <leader>p "*p
+
 " Get rid of search highlights
 noremap <silent><leader>/ :nohlsearch<cr>
 
@@ -188,11 +116,21 @@ cnoremap %% <C-R>=expand('%:h').'/'<CR>
 
 " Buffer management
 nnoremap <leader>d   :bd<cr>
+
+" CtrlP
+nnoremap <leader>t :CtrlP<cr>
+nnoremap <leader>b :CtrlPBuffer<cr>
+nnoremap <leader>l :CtrlPLine<cr>
+
 "----------------------------------------------------------------------
 " Autocommands
 "----------------------------------------------------------------------
 " Clear whitespace at the end of lines automatically
 autocmd BufWritePre * :%s/\s\+$//e
+
+" Don't fold anything.
+autocmd BufWinEnter * set foldlevel=999999
+
 " Reload Powerline when we read a Puppet file. This works around
 " some weird bogus bug.
 autocmd BufNewFile,BufRead *.pp call Pl#Load()
@@ -200,18 +138,7 @@ autocmd BufNewFile,BufRead *.pp call Pl#Load()
 "----------------------------------------------------------------------
 " Plugin settings
 "----------------------------------------------------------------------
-
-" Autocomplete
-let g:SimpylFold_docstring_preview=1
-let g:ycm_autoclose_preview_window_after_completion=1 " close when done
-map <leader>g  :YcmCompleter GoToDefinitionElseDeclaration<CR>
-
 " CtrlP
-nnoremap <leader>t :CtrlP<cr>
-nnoremap <leader>b :CtrlPBuffer<cr>
-nnoremap <leader>l :CtrlPLine<cr>
-
-
 let g:ctrlp_max_files = 10000
 if has("unix")
     let g:ctrlp_user_command = {
@@ -236,23 +163,6 @@ func! s:DeleteBuffer()
   exec "bd" bufid
   exec "norm \<F5>"
 endfunc<D-j>
-
-" flake-8
-let g:PyFlakeOnWrite = 1                      " Auto-check on write
-let g:PyFlakeCheckers = 'pep8,frosted' " List of checkers
-let g:PyFlakeDisabledMessages = 'E712,E711,E501' " List of disabled pep8 errors
-let g:PyFlakeAggressive = 0 " Default aggressiveness for autopep8
-let g:PyFlakeCWindow = 6  " height of quickfix window:
-let g:PyFlakeSigns = 1  " Place signs
-let g:PyFlakeSignStart = 1 " Start sign
-let g:PyFlakeMaxLineLength = 100
-" Auto fix pep8 :PyFlakeAuto
-map <leader>fp :PyFlakeAuto<cr>
-
-" NERDTree
-map <leader>e :NERDTreeToggle<cr>
-
-map <C-e> :NERDTreeToggle<cr>
 
 " EasyMotion
 let g:EasyMotion_leader_key = '<leader><leader>'
@@ -287,27 +197,3 @@ let g:startify_custom_header = [
 " let g:syntastic_mode_map = { 'mode': 'active',
                            \ 'active_filetypes': [],
                            \ 'passive_filetypes': ['cpp', 'go', 'puppet'] }
-" Web Dev
-au BufNewFile,BufRead *.js, *.html, *.css
-    \ set tabstop=2
-    \ set softtabstop=2
-    \ set shiftwidth=2
-
-
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
-
-" python syntax highlighting
-let python_highlight_all = 1
-
-" remove backup directory
-setlocal nowritebackup
-
-
