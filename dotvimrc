@@ -245,7 +245,7 @@ let g:PyFlakeAggressive = 0 " Default aggressiveness for autopep8
 let g:PyFlakeCWindow = 6  " height of quickfix window:
 let g:PyFlakeSigns = 1  " Place signs
 let g:PyFlakeSignStart = 1 " Start sign
-let g:PyFlakeMaxLineLength = 100
+let g:PyFlakeMaxLineLength = 120
 " Auto fix pep8 :PyFlakeAuto
 map <leader>fp :PyFlakeAuto<cr>
 
