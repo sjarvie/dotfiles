@@ -15,11 +15,11 @@ brew install coreutils
 brew install findutils
 
 # Install Bash 4
-brew install bash
+# brew install bash
 
 # Install more recent versions of some OS X tools
-brew tap homebrew/dupes
-brew install homebrew/dupes/grep
+# brew tap homebrew/dupes
+# brew install homebrew/dupes/grep
 
 echo '$PATH=$(brew --prefix coreutils)/libexec/gnubin:$PATH' >> ~/.bash_profile
 
@@ -37,6 +37,9 @@ binaries=(
   ack
   hub
   git
+  chatblade
+  skhd
+  yabai
 )
 
 echo "installing binaries..."
@@ -92,8 +95,6 @@ fonts=(
 # install fonts
 echo "installing fonts..."
 brew cask install ${fonts[@]}
-
-# TODO Mackup
 
 # osx-for-hackers.shA
 #chmod +x ./dot-osx-for-hackers.sh
