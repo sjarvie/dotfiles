@@ -1,0 +1,75 @@
+{
+  "name": "VS Code Dark",
+  "author": "Shane Jarvie",
+  "description": "VS Code Dark theme colors for consistent theming across all productivity tools",
+  
+  "colors": {
+    "primary": {
+      "background": "#1e1e1e",
+      "foreground": "#d4d4d4",
+      "selection": "#264f78",
+      "cursor": "#aeafad"
+    },
+    
+    "ansi": {
+      "black": "#000000",
+      "red": "#cd3131",
+      "green": "#0dbc79",
+      "yellow": "#e5e510",
+      "blue": "#2472c8",
+      "magenta": "#bc3fbc",
+      "cyan": "#11a8cd",
+      "white": "#e5e5e5"
+    },
+    
+    "bright": {
+      "black": "#666666",
+      "red": "#f14c4c",
+      "green": "#23d18b",
+      "yellow": "#f5f543",
+      "blue": "#3b8eea",
+      "magenta": "#d670d6",
+      "cyan": "#29b8db",
+      "white": "#ffffff"
+    },
+    
+    "ui": {
+      "border": "#3c3c3c",
+      "highlight": "#094771",
+      "error": "#f44747",
+      "warning": "#ffcc02",
+      "info": "#0080ff",
+      "success": "#89d185"
+    },
+    
+    "syntax": {
+      "comment": "#6a9955",
+      "keyword": "#569cd6",
+      "string": "#ce9178",
+      "number": "#b5cea8",
+      "variable": "#9cdcfe",
+      "function": "#dcdcaa",
+      "class": "#4ec9b0",
+      "operator": "#d4d4d4",
+      "punctuation": "#cccccc"
+    }
+  },
+  
+  "font": {
+    "family": "Fira Code",
+    "size": 14,
+    "weight": "normal",
+    "ligatures": true
+  },
+  
+  "applications": {
+    "terminal": {
+      "ghostty": "config/ghostty/config",
+      "warp": "config/warp/themes/vscode_dark.yaml"
+    },
+    "editor": {
+      "cursor": "config/cursor/settings.json",
+      "vscode": "config/vscode/settings.json"
+    }
+  }
+}

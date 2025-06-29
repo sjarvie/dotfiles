@@ -1,0 +1,296 @@
+{
+  // Editor Configuration
+  "editor.fontFamily": "Fira Code",
+  "editor.fontSize": 14,
+  "editor.fontLigatures": true,
+  "editor.lineHeight": 1.6,
+  "editor.tabSize": 2,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": true,
+  "editor.wordWrap": "on",
+  "editor.rulers": [80, 120],
+  "editor.minimap.enabled": false,
+  "editor.scrollBeyondLastLine": false,
+  "editor.renderWhitespace": "boundary",
+  "editor.renderControlCharacters": false,
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  "editor.smoothScrolling": true,
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": false,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit"
+  },
+  "editor.semanticHighlighting.enabled": true,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.snippetSuggestions": "top",
+  "editor.wordBasedSuggestions": "off",
+  "editor.suggest.localityBonus": true,
+  "editor.suggest.preview": true,
+  "editor.suggest.showMethods": true,
+  "editor.suggest.showFunctions": true,
+  "editor.suggest.showConstructors": true,
+  "editor.suggest.showFields": true,
+  "editor.suggest.showVariables": true,
+  "editor.suggest.showClasses": true,
+  "editor.suggest.showStructs": true,
+  "editor.suggest.showInterfaces": true,
+  "editor.suggest.showModules": true,
+  "editor.suggest.showProperties": true,
+  "editor.suggest.showEvents": true,
+  "editor.suggest.showOperators": true,
+  "editor.suggest.showUnits": true,
+  "editor.suggest.showValues": true,
+  "editor.suggest.showConstants": true,
+  "editor.suggest.showEnums": true,
+  "editor.suggest.showEnumMembers": true,
+  "editor.suggest.showKeywords": true,
+  "editor.suggest.showWords": true,
+  "editor.suggest.showColors": true,
+  "editor.suggest.showFiles": true,
+  "editor.suggest.showReferences": true,
+  "editor.suggest.showFolders": true,
+  "editor.suggest.showTypeParameters": true,
+  "editor.suggest.showSnippets": true,
+
+  // Theme and Appearance
+  "workbench.colorTheme": "Visual Studio Dark",
+  "workbench.iconTheme": "vscode-icons",
+  "workbench.startupEditor": "none",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editor.restoreViewState": true,
+  "workbench.editor.revealIfOpen": true,
+  "workbench.editor.showTabs": "single",
+  "workbench.activityBar.location": "default",
+  "workbench.sideBar.location": "left",
+  "workbench.panel.defaultLocation": "bottom",
+  "workbench.statusBar.visible": true,
+  "workbench.tree.indent": 20,
+  "workbench.tree.renderIndentGuides": "always",
+
+  // Window and Layout
+  "window.titleBarStyle": "native",
+  "window.zoomLevel": 0,
+  "window.restoreWindows": "all",
+  "window.newWindowDimensions": "inherit",
+  "window.openFilesInNewWindow": "off",
+  "window.openFoldersInNewWindow": "default",
+
+  // Files and Search
+  "files.autoSave": "onFocusChange",
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.hg": true,
+    "**/CVS": true,
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/node_modules": true,
+    "**/.vscode": false
+  },
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/*/**": true,
+    "**/.hg/store/**": true
+  },
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/*.code-search": true,
+    "**/dist": true,
+    "**/build": true
+  },
+  "search.useGlobalIgnoreFiles": true,
+  "search.useIgnoreFiles": true,
+  "search.smartCase": true,
+
+  // Terminal Integration
+  "terminal.integrated.fontFamily": "Fira Code",
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.fontWeight": "normal",
+  "terminal.integrated.lineHeight": 1.2,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.cursorStyle": "block",
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.shell.osx": "/bin/zsh",
+  "terminal.integrated.defaultProfile.osx": "zsh",
+  "terminal.integrated.profiles.osx": {
+    "zsh": {
+      "path": "/bin/zsh",
+      "args": ["-l"]
+    }
+  },
+
+  // Git Integration
+  "git.enabled": true,
+  "git.autorefresh": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+  "git.smartCommitChanges": "tracked",
+  "git.suggestSmartCommit": true,
+  "git.enableCommitSigning": false,
+  "git.decorations.enabled": true,
+  "git.showPushSuccessNotification": true,
+  "scm.diffDecorations": "all",
+  "scm.diffDecorationsGutterVisibility": "always",
+
+  // AI and Copilot
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": false,
+    "plaintext": false,
+    "markdown": true
+  },
+  "github.copilot.editor.enableAutoCompletions": true,
+  "github.copilot.chat.enabled": true,
+
+  // Language-Specific Settings
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+  "[typescript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    }
+  },
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": "explicit"
+    }
+  },
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+
+  // Extension Settings
+  "prettier.requireConfig": false,
+  "prettier.useEditorConfig": true,
+  "prettier.singleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.tabWidth": 2,
+  "prettier.semi": true,
+  "prettier.printWidth": 80,
+
+  "eslint.validate": [
+    "javascript",
+    "javascriptreact",
+    "typescript",
+    "typescriptreact"
+  ],
+  "eslint.format.enable": true,
+  "eslint.lintTask.enable": true,
+
+  "python.defaultInterpreterPath": "/opt/homebrew/bin/python3",
+  "python.linting.enabled": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.flake8Enabled": true,
+  "python.formatting.provider": "black",
+  "python.sortImports.args": ["--profile", "black"],
+
+  "typescript.updateImportsOnFileMove.enabled": "always",
+  "typescript.suggest.autoImports": true,
+  "typescript.preferences.includePackageJsonAutoImports": "auto",
+
+  // Performance and Resource Management
+  "files.hotExit": "onExitAndWindowClose",
+  "search.followSymlinks": false,
+  "typescript.disableAutomaticTypeAcquisition": false,
+  "extensions.autoUpdate": true,
+  "extensions.autoCheckUpdates": true,
+
+  // Security
+  "security.workspace.trust.untrustedFiles": "prompt",
+  "security.workspace.trust.banner": "always",
+  "security.workspace.trust.startupPrompt": "always",
+  "security.workspace.trust.emptyWindow": true,
+
+  // Telemetry (Privacy)
+  "telemetry.telemetryLevel": "off",
+  "redhat.telemetry.enabled": false,
+
+  // Explorer
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.compactFolders": false,
+  "explorer.openEditors.visible": 0,
+
+  // Breadcrumbs
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.showFiles": true,
+  "breadcrumbs.showSymbols": true,
+
+  // Problems Panel
+  "problems.showCurrentInStatus": true,
+
+  // Zen Mode
+  "zenMode.hideStatusBar": false,
+  "zenMode.hideActivityBar": true,
+  "zenMode.hideTabs": true,
+  "zenMode.hideLineNumbers": false,
+
+  // Integrated Terminal
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.copyOnSelection": true,
+  "terminal.integrated.rightClickBehavior": "default",
+
+  // Emmet
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  },
+
+  // Auto-closing
+  "editor.autoClosingBrackets": "always",
+  "editor.autoClosingQuotes": "always",
+  "editor.autoSurround": "languageDefined",
+
+  // Multi-cursor
+  "editor.multiCursorModifier": "ctrlCmd",
+  "editor.find.addExtraSpaceOnTop": false,
+
+  // Experimental Features
+  "editor.experimental.stickyScroll.enabled": true
+}

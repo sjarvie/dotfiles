@@ -1,0 +1,197 @@
+[user]
+	name = YOUR_NAME
+	email = YOUR_EMAIL
+	signingkey = YOUR_GPG_KEY
+
+[core]
+	editor = cursor --wait
+	autocrlf = input
+	safecrlf = true
+	excludesfile = ~/.config/git/.gitignore_global
+	quotepath = false
+	pager = delta
+
+[init]
+	defaultBranch = main
+
+[push]
+	default = simple
+	autoSetupRemote = true
+
+[pull]
+	rebase = true
+
+[merge]
+	tool = vscode
+	conflictstyle = diff3
+
+[mergetool "vscode"]
+	cmd = cursor --wait $MERGED
+
+[diff]
+	tool = vscode
+	colorMoved = default
+
+[difftool "vscode"]
+	cmd = cursor --wait --diff $LOCAL $REMOTE
+
+[delta]
+	navigate = true
+	light = false
+	side-by-side = true
+	line-numbers = true
+	syntax-theme = Visual Studio Dark+
+
+[interactive]
+	diffFilter = delta --color-only
+
+[alias]
+	# Status & Info
+	st = status
+	s = status --short
+	
+	# Add & Commit
+	a = add
+	aa = add --all
+	ap = add --patch
+	c = commit
+	cm = commit -m
+	ca = commit --amend
+	can = commit --amend --no-edit
+	
+	# Branch Management
+	b = branch
+	ba = branch -a
+	bd = branch -d
+	bD = branch -D
+	
+	# Checkout & Switch
+	co = checkout
+	cb = checkout -b
+	sw = switch
+	swc = switch -c
+	
+	# Push & Pull
+	p = push
+	pf = push --force-with-lease
+	pl = pull
+	plo = pull origin
+	plu = pull upstream
+	
+	# Fetch
+	f = fetch
+	fo = fetch origin
+	fu = fetch upstream
+	
+	# Merge & Rebase
+	m = merge
+	rb = rebase
+	rbi = rebase -i
+	rbc = rebase --continue
+	rba = rebase --abort
+	
+	# Log & History
+	l = log --oneline
+	lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue- %an %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	lga = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue- %an %Cgreen(%cr)%Creset' --abbrev-commit --date=relative --all
+	lgs = log --stat --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cblue- %an %Cgreen(%cr)%Creset' --abbrev-commit --date=relative
+	last = log -1 HEAD --stat
+	
+	# Diff
+	d = diff
+	ds = diff --staged
+	dc = diff --cached
+	
+	# Stash
+	st = stash
+	stp = stash pop
+	sts = stash show
+	stl = stash list
+	std = stash drop
+	
+	# Reset & Clean
+	unstage = reset HEAD --
+	undo = reset --soft HEAD~1
+	hard-reset = reset --hard HEAD
+	clean-all = clean -fd
+	
+	# Remote
+	r = remote
+	rv = remote -v
+	ra = remote add
+	rr = remote remove
+	
+	# Utility
+	aliases = config --get-regexp alias
+	who = shortlog -n -s --no-merges
+	changed = show --pretty="format:" --name-only
+	contributors = shortlog --summary --numbered --email
+	
+	# Workflow
+	wip = commit -am "WIP"
+	unwip = reset HEAD~1 --mixed
+	assume = update-index --assume-unchanged
+	unassume = update-index --no-assume-unchanged
+	assumed = "!git ls-files -v | grep ^h | cut -c 3-"
+	
+	# Find
+	find-file = "!git ls-files | grep -i"
+	find-text = "!git grep --name-only"
+	
+	# Maintenance
+	prune-branches = "!git branch --merged | grep -v '\\*\\|master\\|main\\|develop' | xargs -n 1 git branch -d"
+	recent-branches = for-each-ref --sort=-committerdate refs/heads/ --format='%(refname:short) (%(committerdate:relative))'
+
+[color]
+	ui = auto
+	branch = auto
+	diff = auto
+	interactive = auto
+	status = auto
+
+[color "branch"]
+	current = yellow reverse
+	local = yellow
+	remote = green
+
+[color "diff"]
+	meta = 11
+	frag = magenta bold
+	old = red bold
+	new = green bold
+	commit = yellow bold
+	whitespace = red reverse
+
+[color "status"]
+	added = yellow
+	changed = green
+	untracked = cyan
+
+[credential]
+	helper = osxkeychain
+
+[commit]
+	template = ~/.config/git/.gitmessage
+	gpgsign = false
+
+[tag]
+	gpgsign = false
+
+[rebase]
+	autoStash = true
+	autoSquash = true
+
+[rerere]
+	enabled = true
+
+[help]
+	autocorrect = 1
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+
+[url "git@github.com:"]
+	insteadOf = https://github.com/

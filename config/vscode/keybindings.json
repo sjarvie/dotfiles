@@ -1,0 +1,239 @@
+[
+  // File Navigation
+  {
+    "key": "cmd+p",
+    "command": "workbench.action.quickOpen"
+  },
+  {
+    "key": "cmd+shift+p",
+    "command": "workbench.action.showCommands"
+  },
+  {
+    "key": "cmd+shift+o",
+    "command": "workbench.action.gotoSymbol"
+  },
+  {
+    "key": "cmd+t",
+    "command": "workbench.action.showAllSymbols"
+  },
+
+  // Editor Management
+  {
+    "key": "cmd+w",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  {
+    "key": "cmd+shift+w",
+    "command": "workbench.action.closeWindow"
+  },
+  {
+    "key": "cmd+alt+left",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "cmd+alt+right",
+    "command": "workbench.action.navigateForward"
+  },
+
+  // Split Editor
+  {
+    "key": "cmd+\\",
+    "command": "workbench.action.splitEditor"
+  },
+  {
+    "key": "cmd+1",
+    "command": "workbench.action.focusFirstEditorGroup"
+  },
+  {
+    "key": "cmd+2",
+    "command": "workbench.action.focusSecondEditorGroup"
+  },
+  {
+    "key": "cmd+3",
+    "command": "workbench.action.focusThirdEditorGroup"
+  },
+
+  // Terminal
+  {
+    "key": "ctrl+`",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  {
+    "key": "cmd+shift+c",
+    "command": "workbench.action.terminal.openNativeConsole"
+  },
+  {
+    "key": "ctrl+shift+`",
+    "command": "workbench.action.terminal.new"
+  },
+
+  // Search and Replace
+  {
+    "key": "cmd+f",
+    "command": "actions.find"
+  },
+  {
+    "key": "cmd+shift+f",
+    "command": "workbench.action.findInFiles"
+  },
+  {
+    "key": "cmd+alt+f",
+    "command": "editor.action.startFindReplaceAction"
+  },
+  {
+    "key": "cmd+shift+h",
+    "command": "workbench.action.replaceInFiles"
+  },
+
+  // Code Navigation
+  {
+    "key": "f12",
+    "command": "editor.action.revealDefinition"
+  },
+  {
+    "key": "cmd+f12",
+    "command": "editor.action.goToImplementation"
+  },
+  {
+    "key": "shift+f12",
+    "command": "editor.action.goToReferences"
+  },
+  {
+    "key": "f2",
+    "command": "editor.action.rename"
+  },
+
+  // Code Editing
+  {
+    "key": "cmd+d",
+    "command": "editor.action.addSelectionToNextFindMatch"
+  },
+  {
+    "key": "cmd+shift+l",
+    "command": "editor.action.selectHighlights"
+  },
+  {
+    "key": "alt+up",
+    "command": "editor.action.moveLinesUpAction"
+  },
+  {
+    "key": "alt+down",
+    "command": "editor.action.moveLinesDownAction"
+  },
+  {
+    "key": "shift+alt+up",
+    "command": "editor.action.copyLinesUpAction"
+  },
+  {
+    "key": "shift+alt+down",
+    "command": "editor.action.copyLinesDownAction"
+  },
+  {
+    "key": "cmd+shift+k",
+    "command": "editor.action.deleteLines"
+  },
+
+  // Formatting
+  {
+    "key": "shift+alt+f",
+    "command": "editor.action.formatDocument"
+  },
+  {
+    "key": "cmd+k cmd+f",
+    "command": "editor.action.formatSelection"
+  },
+
+  // Comments
+  {
+    "key": "cmd+/",
+    "command": "editor.action.commentLine"
+  },
+  {
+    "key": "shift+alt+a",
+    "command": "editor.action.blockComment"
+  },
+
+  // Folding
+  {
+    "key": "cmd+shift+[",
+    "command": "editor.fold"
+  },
+  {
+    "key": "cmd+shift+]",
+    "command": "editor.unfold"
+  },
+  {
+    "key": "cmd+k cmd+0",
+    "command": "editor.foldAll"
+  },
+  {
+    "key": "cmd+k cmd+j",
+    "command": "editor.unfoldAll"
+  },
+
+  // Git
+  {
+    "key": "ctrl+shift+g",
+    "command": "workbench.view.scm"
+  },
+
+  // Extensions and Tools
+  {
+    "key": "cmd+shift+x",
+    "command": "workbench.view.extensions"
+  },
+  {
+    "key": "cmd+shift+y",
+    "command": "workbench.action.toggleDevTools"
+  },
+
+  // Custom Shortcuts for Productivity
+  {
+    "key": "cmd+k cmd+r",
+    "command": "workbench.action.reloadWindow"
+  },
+  {
+    "key": "cmd+k cmd+s",
+    "command": "workbench.action.openGlobalKeybindings"
+  },
+  {
+    "key": "cmd+,",
+    "command": "workbench.action.openSettings"
+  },
+
+  // Panel Management
+  {
+    "key": "cmd+j",
+    "command": "workbench.action.togglePanel"
+  },
+  {
+    "key": "cmd+shift+e",
+    "command": "workbench.view.explorer"
+  },
+  {
+    "key": "cmd+shift+d",
+    "command": "workbench.view.debug"
+  },
+
+  // Zen Mode
+  {
+    "key": "cmd+k z",
+    "command": "workbench.action.toggleZenMode"
+  },
+
+  // Multi-cursor
+  {
+    "key": "cmd+alt+up",
+    "command": "editor.action.insertCursorAbove"
+  },
+  {
+    "key": "cmd+alt+down",
+    "command": "editor.action.insertCursorBelow"
+  },
+
+  // Breadcrumbs
+  {
+    "key": "cmd+shift+;",
+    "command": "breadcrumbs.focus"
+  }
+]

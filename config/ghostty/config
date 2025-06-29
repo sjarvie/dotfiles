@@ -1,0 +1,71 @@
+# Ghostty Configuration - VS Code Dark Theme
+# Font Configuration
+font-family = "Fira Code"
+font-size = 14
+font-feature = +liga
+font-feature = +clig
+
+# Theme: VS Code Dark
+background = 1e1e1e
+foreground = d4d4d4
+selection-background = 264f78
+selection-foreground = d4d4d4
+cursor-color = aeafad
+cursor-style = block
+cursor-style-blink = true
+
+# Colors
+palette = 0=#000000
+palette = 1=#cd3131
+palette = 2=#0dbc79
+palette = 3=#e5e510
+palette = 4=#2472c8
+palette = 5=#bc3fbc
+palette = 6=#11a8cd
+palette = 7=#e5e5e5
+palette = 8=#666666
+palette = 9=#f14c4c
+palette = 10=#23d18b
+palette = 11=#f5f543
+palette = 12=#3b8eea
+palette = 13=#d670d6
+palette = 14=#29b8db
+palette = 15=#ffffff
+
+# Window Configuration
+window-padding-x = 8
+window-padding-y = 8
+window-decoration = true
+window-theme = dark
+macos-titlebar-style = native
+
+# Terminal Configuration
+shell-integration = zsh
+copy-on-select = true
+scrollback-limit = 10000
+mouse-hide-while-typing = true
+
+# macOS-specific keybindings
+keybind = cmd+c=copy_to_clipboard
+keybind = cmd+v=paste_from_clipboard
+keybind = cmd+t=new_tab
+keybind = cmd+w=close_surface
+keybind = cmd+n=new_window
+keybind = cmd+shift+left_bracket=previous_tab
+keybind = cmd+shift+right_bracket=next_tab
+keybind = cmd+1=goto_tab:1
+keybind = cmd+2=goto_tab:2
+keybind = cmd+3=goto_tab:3
+keybind = cmd+4=goto_tab:4
+keybind = cmd+5=goto_tab:5
+keybind = cmd+6=goto_tab:6
+keybind = cmd+7=goto_tab:7
+keybind = cmd+8=goto_tab:8
+keybind = cmd+9=goto_tab:9
+keybind = cmd+equal=increase_font_size:1
+keybind = cmd+minus=decrease_font_size:1
+keybind = cmd+zero=reset_font_size
+
+# Performance
+minimum-contrast = 1.0
+adjust-cursor-thickness = 1

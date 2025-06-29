@@ -1,0 +1,32 @@
+name: VS Code Dark
+author: Shane Jarvie
+author_github: shanejarvie
+terminal_ansi_colors:
+  bright_black: "#666666"
+  bright_blue: "#3b8eea"
+  bright_cyan: "#29b8db"
+  bright_green: "#23d18b"
+  bright_magenta: "#d670d6"
+  bright_red: "#f14c4c"
+  bright_white: "#ffffff"
+  bright_yellow: "#f5f543"
+  normal_black: "#000000"
+  normal_blue: "#2472c8"
+  normal_cyan: "#11a8cd"
+  normal_green: "#0dbc79"
+  normal_magenta: "#bc3fbc"
+  normal_red: "#cd3131"
+  normal_white: "#e5e5e5"
+  normal_yellow: "#e5e510"
+details: 
+  darker: true
+  accent: "#264f78"
+  background: "#1e1e1e"
+  foreground: "#d4d4d4"
+  details: 
+    background: "#1e1e1e"
+    foreground: "#d4d4d4"
+  lighter: false
+  background_image: 
+    path: ""
+    opacity: 1.0
