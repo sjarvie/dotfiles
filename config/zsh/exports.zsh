@@ -18,13 +18,17 @@ export NVM_DIR="$HOME/.nvm"
 
 # Python
 export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)" 2>/dev/null || true
+if [[ -d $PYENV_ROOT/bin ]]; then
+    export PATH="$PYENV_ROOT/bin:$PATH"
+    eval "$(pyenv init -)" 2>/dev/null || true
+fi
 
 # Ruby
 export RBENV_ROOT="$HOME/.rbenv"
-[[ -d $RBENV_ROOT/bin ]] && export PATH="$RBENV_ROOT/bin:$PATH"
-eval "$(rbenv init -)" 2>/dev/null || true
+if [[ -d $RBENV_ROOT/bin ]]; then
+    export PATH="$RBENV_ROOT/bin:$PATH"
+    eval "$(rbenv init -)" 2>/dev/null || true
+fi
 
 # Rust
 [[ -f "$HOME/.cargo/env" ]] && source "$HOME/.cargo/env"

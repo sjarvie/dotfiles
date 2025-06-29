@@ -7,14 +7,12 @@ fi
 
 # Oh My Zsh Configuration
 export ZSH="$HOME/.oh-my-zsh"
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="mh"
 
 # Plugin Configuration - Keep minimal for fast startup
 plugins=(
   git
   z
-  zsh-autosuggestions
-  zsh-syntax-highlighting
   docker
   brew
 )
@@ -23,9 +21,9 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 # Load additional configuration files
-source ~/.config/zsh/exports.zsh
-source ~/.config/zsh/aliases.zsh
-source ~/.config/zsh/functions.zsh
+[[ -f ~/.config/zsh/exports.zsh ]] && source ~/.config/zsh/exports.zsh
+[[ -f ~/.config/zsh/aliases.zsh ]] && source ~/.config/zsh/aliases.zsh
+[[ -f ~/.config/zsh/functions.zsh ]] && source ~/.config/zsh/functions.zsh
 
 # History configuration
 HISTFILE=~/.zsh_history

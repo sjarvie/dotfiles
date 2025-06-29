@@ -24,7 +24,7 @@ install_fonts_homebrew() {
     
     # Add font cask if not already added
     if ! brew tap | grep -q "homebrew/cask-fonts"; then
-        brew tap homebrew/cask-fonts
+        brew tap homebrew/cask-fonts 2>/dev/null || true
     fi
     
     # List of fonts to install

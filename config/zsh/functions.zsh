@@ -33,7 +33,7 @@ fnd() {
 }
 
 # Quick project switcher using fzf
-proj() {
+project_switch() {
   local project_dir="${HOME}/Projects"
   if [ ! -d "$project_dir" ]; then
     project_dir="${HOME}/Developer"
@@ -65,7 +65,7 @@ note() {
 }
 
 # Git branch switcher with fzf
-gbr() {
+git_branch_switch() {
   local branches branch
   branches=$(git branch --all | grep -v HEAD) &&
   branch=$(echo "$branches" | fzf-tmux -d $(( 2 + $(wc -l <<< "$branches") )) +m) &&
@@ -87,7 +87,7 @@ killp() {
 }
 
 # Weather function
-weather() {
+get_weather() {
   curl -s "wttr.in/${1:-}" | head -n -3
 }
 
@@ -116,11 +116,11 @@ jsonify() {
 }
 
 # URL encode/decode
-urlencode() {
+url_encode() {
   python3 -c "import urllib.parse; print(urllib.parse.quote('''$1'''))"
 }
 
-urldecode() {
+url_decode() {
   python3 -c "import urllib.parse; print(urllib.parse.unquote('''$1'''))"
 }
 
@@ -132,7 +132,7 @@ dcleanup() {
 }
 
 # Git commit with conventional commits
-gcommit() {
+git_conventional_commit() {
   local type="${1:-feat}"
   local scope="$2"
   local message="$3"

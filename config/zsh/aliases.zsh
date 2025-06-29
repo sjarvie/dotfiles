@@ -20,7 +20,7 @@ alias dt="cd ~/Desktop"
 alias dl="cd ~/Downloads"
 alias doc="cd ~/Documents"
 alias dev="cd ~/Developer"
-alias proj="cd ~/Projects"
+alias proj="project_switch"
 alias dots="cd ~/.config"
 
 # File operations
@@ -46,6 +46,7 @@ alias gb="git branch"
 alias gba="git branch -a"
 alias gco="git checkout"
 alias gcb="git checkout -b"
+alias gbr="git_branch_switch"
 alias gm="git merge"
 alias gr="git rebase"
 alias gl="git log --oneline --graph --decorate"
@@ -101,8 +102,8 @@ fi
 # Development tools
 alias serve="python3 -m http.server"
 alias jsonpp="python3 -m json.tool"
-alias urlencode="python3 -c 'import sys, urllib.parse; print(urllib.parse.quote(sys.argv[1]))'"
-alias urldecode="python3 -c 'import sys, urllib.parse; print(urllib.parse.unquote(sys.argv[1]))'"
+alias urlencode="url_encode"
+alias urldecode="url_decode"
 
 # Network
 alias myip="curl -s ifconfig.me"
@@ -143,5 +144,5 @@ alias spotlight="sudo mdutil -i on / > /dev/null"
 alias spotlightoff="sudo mdutil -i off / > /dev/null"
 
 # Fun stuff
-alias weather="curl -s wttr.in"
+alias weather="get_weather"
 alias moon="curl -s wttr.in/Moon"
